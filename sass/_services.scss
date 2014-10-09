@@ -1,0 +1,70 @@
+.serv {
+    clear:both;
+    background-color: white;
+    color:$deepBlue;
+    @include span(15);
+    float:none;
+    padding-top:4.345em;
+
+    div {
+        @include span(11);
+        float:none;
+        margin:0 auto 2em;
+
+        &:after {
+            content :"";
+            clear:both;
+            display:block;
+        }
+
+        ul {
+            padding:0;
+            margin:0;
+            width:100%;
+            position:relative;
+        }
+
+        li {
+            list-style-type: none;
+            width:100%;
+            position:relative;
+            margin:1em 0;
+            
+            img {
+                display:inline-block;
+                width:25%;
+                position:relative;
+                border-radius: 50em;
+                left:-30%;
+                text-align:center;
+                transition: all 1s ease-in;
+            }
+
+
+            p{
+                opacity:0;
+                width:30%;
+                display:inline-block;
+                vertical-align: middle;
+            }
+            
+            img{
+                border-radius: 50em;
+                border:0.47375em solid; 
+                border-color:$deepBlue;
+                width:25%;
+            }
+            
+            &:hover img{
+               left:20%;
+            }
+
+            &:hover p{
+               transition : 1s;
+               opacity: 1;
+            }
+
+        }
+
+    }
+}

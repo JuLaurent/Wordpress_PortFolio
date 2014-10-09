@@ -1,0 +1,357 @@
+@mixin color($color, $background-color){
+    @extend .realisations;
+    color: $color;
+    background-color: $background-color;
+}
+
+body {
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+header {
+    background-color: $blue;
+    color:white;
+    @include span(15);
+    position:fixed;
+    z-index:99;
+    
+    div {
+        
+        @include span(11);
+        margin:0 auto;
+        float:none;
+
+        
+        h1 {
+            text-transform: uppercase;
+            margin-right:1.4em;
+            vertical-align: middle;
+        }
+
+        h1, nav, ul, li {
+            display :inline;
+        }
+
+        ul {
+            vertical-align: middle;
+        }
+        
+        a {
+            color:white;
+            text-decoration: none;
+            display:inline-block;
+            font-size: 120%;
+        }
+
+        nav a {
+            padding:0.79em 0.8em;
+
+            &:hover{
+                background-color: $green;
+                text-decoration: underline;
+            }
+            
+        }
+
+        .social{      
+
+            margin:0;
+            float:right;
+
+            li {
+                
+                display:inline-block;
+                vertical-align: middle;
+            }
+            
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: "icomoon";
+            }
+
+            .icon-facebook::before {
+                    content: "\e601";
+            }
+
+            .icon-twitter::before {
+                    content: "\e602";
+            }
+
+            .icon-googleplus::before{
+                    content: "\e600";
+            }
+
+            .icon-linkedin::before {
+                    content: "\e604";
+            }
+
+            .icon-feed::before {
+                    content: "\e603";
+            }
+
+            a{
+            
+            text-align:right;
+            padding:0.79em 0.4em 0.79em ;
+
+                &:hover{
+                background-color: $green;
+                text-decoration: underline;
+                }
+
+            }   
+        }
+     
+
+    }   
+        
+}
+
+.propos {
+    clear:both;
+    background-color: white;
+    color:$deepBlue;
+    @include span(15);
+    float:none;
+    padding-top:4.345em;
+
+    div {
+        @include span(11);
+        float:none;
+        margin:0 auto;
+        padding:1em 0;
+
+        blockquote {
+            margin:0;
+            font-family: 'Droid Serif', serif;
+            width:54.545454%;
+            font-size:1.5em;
+            font-style: italic;
+            float:none;
+
+        }
+
+        img {
+            width:26.21209328048668%;
+            margin:1em 0;
+            float:right;
+            border-radius: 50em;
+            border:0.47375em solid $deepBlue;
+
+        }
+        
+        a {
+            display:inline-block;
+            margin-top:6em;
+            width:18.181818%;
+            text-align: center;
+            text-decoration: none;
+            color:$deepBlue;
+            border:0.2em solid $deepBlue;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color: $deepBlue;
+                color:white;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &:after {
+        content :"";
+        clear:both;
+        display:block;
+    }
+}
+
+.realisations {
+    @include span(15);
+    background-color: $green;
+    color:white;
+    clear:both;
+   
+
+    div {
+        @include span(11);
+        margin:0 auto;
+        float:none;
+        text-align: center;
+        padding:1em 0 2em;
+
+        ul {
+            padding:0;
+            margin:0;
+
+        }
+
+        li {
+            width:27.27%;
+            height:27.27%;
+            position:relative;
+            display:inline-block;
+            
+            a {
+                display:inline-block;
+                width:100%;
+                position:relative;
+                border-radius: 50em;
+            }
+
+            &+li {
+                margin-left: 8.74%;
+            }
+            
+            img{
+                border-radius: 50em;
+                border:0.47375em solid; 
+                border-color:$deepGreen;
+                width:96%;
+            }
+
+            a span {
+                position:absolute;
+                padding:40% 0;
+                font-weight: bold;
+                width:100%;
+                height:20%;
+                color:white;
+                background-color: black;
+                right:0%;
+                top:0%;
+                font-size:250%;
+                opacity:0.9;
+                border-radius: 50em;
+            }
+
+            &:hover a span, a span:hover {
+               transition : 0.7s;
+               opacity: 0;
+            }            
+        }
+
+        >a {
+            clear:both;
+            display: inline-block;
+            text-align: center;
+            float:none;
+            text-decoration: none;
+            margin:2em auto;
+            color:white;
+            border:0.2em solid white;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color:white;
+                color:$deepGreen;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+.services {
+    @include color($deepBlue, white);
+
+    div {
+        li {
+            
+            img {
+                border-color: $deepBlue;
+            }   
+
+            img:hover + span, span:hover {
+
+               color:$deepBlue;
+
+            }
+        }
+        
+
+        >a {
+            color:$deepBlue;
+            border:0.2em solid $deepBlue;
+
+            &:hover{
+                background-color:$deepBlue;
+                color:white;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+.contact {
+    @include color(white, $green);
+
+    div {
+        
+        li {
+            width:13.333%;
+            height:13.333%;
+            position:relative;
+
+            a {
+                width:100%;
+            }
+
+            &+li {
+                margin-left:3.65%;
+            }
+            
+            img{  
+                border:none;
+                width:100%;
+            }
+
+            a span{
+                font-size:200%;
+            }
+
+        }
+
+        
+
+        >a {
+            clear:both;
+            display: inline-block;
+            text-align: center;
+            float:none;
+            text-decoration: none;
+            margin:2em auto;
+            color:white;
+            border:0.2em solid white;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color:white;
+                color:$deepGreen;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+footer {
+    clear:both;
+    width:100%;
+    bottom:0;
+    background-color: $blue;
+    color:white;
+    text-align:center;
+    font-size:1.2em;
+    padding:1em 0;
+
+    a{
+        color:white;
+    }
+
+    span {
+        display:block;
+    }
+}
