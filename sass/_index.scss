@@ -4,11 +4,22 @@
     background-color: $background-color;
 }
 
-body {
-    font-family: 'Lato', Helvetica, sans-serif;
+html {
+    height:100%;
 }
 
-header {
+body {
+    font-family: 'Lato', Helvetica, sans-serif;
+    min-height: 100%;
+    position: relative;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom:1.2em;
+}
+
+.head {
     background-color: $blue;
     color:white;
     @include span(15);
@@ -24,16 +35,18 @@ header {
         
         h1 {
             text-transform: uppercase;
-            margin-right:1.4em;
+            margin:0 3em 0 0;
             vertical-align: middle;
         }
 
-        h1, nav, ul, li {
-            display :inline;
+        h1, .nav, ul, li {
+            display :inline-block;
         }
 
         ul {
             vertical-align: middle;
+            margin:0;
+            padding: 0;
         }
         
         a {
@@ -43,8 +56,8 @@ header {
             font-size: 120%;
         }
 
-        nav a {
-            padding:0.79em 0.8em;
+        .nav a {
+            padding:0.79em 0.4em;
 
             &:hover{
                 background-color: $green;
@@ -53,14 +66,16 @@ header {
             
         }
 
+        .current_page_item {
+             background-color: $green;
+        }
+
         .social{      
 
             margin:0;
             float:right;
 
             li {
-                
-                display:inline-block;
                 vertical-align: middle;
             }
             
@@ -91,7 +106,7 @@ header {
             a{
             
             text-align:right;
-            padding:0.79em 0.4em 0.79em ;
+            padding:0.79em 0.4em ;
 
                 &:hover{
                 background-color: $green;
@@ -106,19 +121,32 @@ header {
         
 }
 
+.wrapper {
+    padding-top:4.375em;
+    padding-bottom:6em;
+    position: relative;
+
+}
+
 .propos {
     clear:both;
     background-color: white;
     color:$deepBlue;
     @include span(15);
     float:none;
-    padding-top:4.345em;
+    padding-bottom:2em;
 
     div {
         @include span(11);
         float:none;
         margin:0 auto;
         padding:1em 0;
+
+        &:after{
+            clear:both;
+            content:"";
+            display:block;
+        }
 
         blockquote {
             margin:0;
@@ -131,8 +159,9 @@ header {
         }
 
         img {
-            width:26.21209328048668%;
-            margin:1em 0;
+            width:27.27272727272727%;
+            box-sizing: border-box;
+            margin-bottom:2em;
             float:right;
             border-radius: 50em;
             border:0.47375em solid $deepBlue;
@@ -142,17 +171,18 @@ header {
         a {
             display:inline-block;
             margin-top:6em;
-            width:18.181818%;
+            width:27.27272727272727%;
             text-align: center;
             text-decoration: none;
-            color:$deepBlue;
+            color:white;
+            background-color: $deepBlue;
             border:0.2em solid $deepBlue;
             padding:0.5em;
             border-radius: 0.6em;
 
             &:hover{
-                background-color: $deepBlue;
-                color:white;
+                background-color: white;
+                color:$deepBlue;
                 text-decoration: underline;
             }
         }
@@ -167,6 +197,7 @@ header {
 
 .realisations {
     @include span(15);
+    float:none;
     background-color: $green;
     color:white;
     clear:both;
@@ -182,20 +213,25 @@ header {
         ul {
             padding:0;
             margin:0;
-
+            
+            &:after {
+                content :"";
+                clear:both;
+                display:block;
+            }
         }
 
         li {
+            box-sizing: border-box;
             width:27.27%;
-            height:27.27%;
-            position:relative;
-            display:inline-block;
+            float:left;
+            list-style-type: none;
+            
             
             a {
                 display:inline-block;
                 width:100%;
                 position:relative;
-                border-radius: 50em;
             }
 
             &+li {
@@ -206,7 +242,9 @@ header {
                 border-radius: 50em;
                 border:0.47375em solid; 
                 border-color:$deepGreen;
-                width:96%;
+                width:100%;
+                height:100%;
+                box-sizing: border-box;
             }
 
             a span {
@@ -237,14 +275,15 @@ header {
             float:none;
             text-decoration: none;
             margin:2em auto;
-            color:white;
+            color:$deepGreen;
+            background-color: white;
             border:0.2em solid white;
             padding:0.5em;
             border-radius: 0.6em;
 
             &:hover{
-                background-color:white;
-                color:$deepGreen;
+                background-color:$deepGreen;
+                color:white;
                 text-decoration: underline;
             }
         }
@@ -252,8 +291,9 @@ header {
     }
 }
 
-.services {
+.skills {
     @include color($deepBlue, white);
+    float:none;
 
     div {
         li {
@@ -271,12 +311,13 @@ header {
         
 
         >a {
-            color:$deepBlue;
+            color:white;
+            background-color: $deepBlue;
             border:0.2em solid $deepBlue;
 
             &:hover{
-                background-color:$deepBlue;
-                color:white;
+                background-color: white;
+                color:$deepBlue;
                 text-decoration: underline;
             }
         }
@@ -286,6 +327,7 @@ header {
 
 .contact {
     @include color(white, $green);
+    float:none;
 
     div {
         
@@ -322,14 +364,15 @@ header {
             float:none;
             text-decoration: none;
             margin:2em auto;
-            color:white;
+            color:$deepGreen;
+            background-color: white;
             border:0.2em solid white;
             padding:0.5em;
             border-radius: 0.6em;
 
             &:hover{
-                background-color:white;
-                color:$deepGreen;
+                background-color:$deepGreen;
+                color:white;
                 text-decoration: underline;
             }
         }
@@ -338,14 +381,16 @@ header {
 }
 
 footer {
-    clear:both;
+    position: absolute;
     width:100%;
+    height: 6em;
     bottom:0;
     background-color: $blue;
     color:white;
     text-align:center;
     font-size:1.2em;
     padding:1em 0;
+    box-sizing:border-box;
 
     a{
         color:white;

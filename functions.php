@@ -2,6 +2,7 @@
 	
 	add_action('init','create_post_types');
 	add_action('init','create_nav_menu');
+	add_theme_support( 'post-thumbnails' ); 
 
 	function create_post_types(){
 		
@@ -14,12 +15,12 @@
 		register_post_type('realisations', $args1);
 
 		$args2 = [
-			'label' => 'Services',
+			'label' => 'Compétences',
 			'public' => true,
 			'supports' => array( 'title' , 'editor' , 'author' , 'thumbnail' , 'except')
 		];
 
-		register_post_type('services', $args2);
+		register_post_type('skills', $args2);
 
 
 		$args3 = [

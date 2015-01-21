@@ -551,12 +551,25 @@ th {
 }
 
 /* line 7, sass/_index.scss */
-body {
-  font-family: 'Lato', Helvetica, sans-serif;
+html {
+  height: 100%;
 }
 
 /* line 11, sass/_index.scss */
-header {
+body {
+  font-family: 'Lato', Helvetica, sans-serif;
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 17, sass/_index.scss */
+h2 {
+  font-size: 2em;
+  margin-bottom: 1.2em;
+}
+
+/* line 22, sass/_index.scss */
+.head {
   background-color: #004f7e;
   color: white;
   width: 100%;
@@ -566,90 +579,102 @@ header {
   position: fixed;
   z-index: 99;
 }
-/* line 18, sass/_index.scss */
-header div {
+/* line 29, sass/_index.scss */
+.head div {
   width: 72.97297%;
   float: left;
   margin-right: 1.35135%;
   margin: 0 auto;
   float: none;
 }
-/* line 25, sass/_index.scss */
-header div h1 {
+/* line 36, sass/_index.scss */
+.head div h1 {
   text-transform: uppercase;
-  margin-right: 1.4em;
+  margin: 0 3em 0 0;
   vertical-align: middle;
 }
-/* line 31, sass/_index.scss */
-header div h1, header div nav, header div ul, header div li {
-  display: inline;
+/* line 42, sass/_index.scss */
+.head div h1, .head div .nav, .head div ul, .head div li {
+  display: inline-block;
 }
-/* line 35, sass/_index.scss */
-header div ul {
+/* line 46, sass/_index.scss */
+.head div ul {
   vertical-align: middle;
+  margin: 0;
+  padding: 0;
 }
-/* line 39, sass/_index.scss */
-header div a {
+/* line 52, sass/_index.scss */
+.head div a {
   color: white;
   text-decoration: none;
   display: inline-block;
   font-size: 120%;
 }
-/* line 46, sass/_index.scss */
-header div nav a {
-  padding: 0.79em 0.8em;
+/* line 59, sass/_index.scss */
+.head div .nav a {
+  padding: 0.79em 0.4em;
 }
-/* line 49, sass/_index.scss */
-header div nav a:hover {
+/* line 62, sass/_index.scss */
+.head div .nav a:hover {
   background-color: #007f73;
   text-decoration: underline;
 }
-/* line 56, sass/_index.scss */
-header div .social {
+/* line 69, sass/_index.scss */
+.head div .current_page_item {
+  background-color: #007f73;
+}
+/* line 73, sass/_index.scss */
+.head div .social {
   margin: 0;
   float: right;
 }
-/* line 61, sass/_index.scss */
-header div .social li {
-  display: inline-block;
+/* line 78, sass/_index.scss */
+.head div .social li {
   vertical-align: middle;
 }
-/* line 67, sass/_index.scss */
-header div .social [class^="icon-"], header div .social [class*=" icon-"] {
+/* line 82, sass/_index.scss */
+.head div .social [class^="icon-"], .head div .social [class*=" icon-"] {
   font-family: "icomoon";
 }
-/* line 71, sass/_index.scss */
-header div .social .icon-facebook::before {
+/* line 86, sass/_index.scss */
+.head div .social .icon-facebook::before {
   content: "\e601";
 }
-/* line 75, sass/_index.scss */
-header div .social .icon-twitter::before {
+/* line 90, sass/_index.scss */
+.head div .social .icon-twitter::before {
   content: "\e602";
 }
-/* line 79, sass/_index.scss */
-header div .social .icon-googleplus::before {
+/* line 94, sass/_index.scss */
+.head div .social .icon-googleplus::before {
   content: "\e600";
 }
-/* line 83, sass/_index.scss */
-header div .social .icon-linkedin::before {
+/* line 98, sass/_index.scss */
+.head div .social .icon-linkedin::before {
   content: "\e604";
 }
-/* line 87, sass/_index.scss */
-header div .social .icon-feed::before {
+/* line 102, sass/_index.scss */
+.head div .social .icon-feed::before {
   content: "\e603";
 }
-/* line 91, sass/_index.scss */
-header div .social a {
+/* line 106, sass/_index.scss */
+.head div .social a {
   text-align: right;
-  padding: 0.79em 0.4em 0.79em;
+  padding: 0.79em 0.4em;
 }
-/* line 96, sass/_index.scss */
-header div .social a:hover {
+/* line 111, sass/_index.scss */
+.head div .social a:hover {
   background-color: #007f73;
   text-decoration: underline;
 }
 
-/* line 109, sass/_index.scss */
+/* line 124, sass/_index.scss */
+.wrapper {
+  padding-top: 4.375em;
+  padding-bottom: 6em;
+  position: relative;
+}
+
+/* line 131, sass/_index.scss */
 .propos {
   clear: both;
   background-color: white;
@@ -659,9 +684,9 @@ header div .social a:hover {
   margin-left: 0;
   margin-right: 0;
   float: none;
-  padding-top: 4.345em;
+  padding-bottom: 2em;
 }
-/* line 117, sass/_index.scss */
+/* line 139, sass/_index.scss */
 .propos div {
   width: 72.97297%;
   float: left;
@@ -670,7 +695,13 @@ header div .social a:hover {
   margin: 0 auto;
   padding: 1em 0;
 }
-/* line 123, sass/_index.scss */
+/* line 145, sass/_index.scss */
+.propos div:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 151, sass/_index.scss */
 .propos div blockquote {
   margin: 0;
   font-family: 'Droid Serif', serif;
@@ -679,51 +710,54 @@ header div .social a:hover {
   font-style: italic;
   float: none;
 }
-/* line 133, sass/_index.scss */
+/* line 161, sass/_index.scss */
 .propos div img {
-  width: 26.21209328048668%;
-  margin: 1em 0;
+  width: 27.27272727272727%;
+  box-sizing: border-box;
+  margin-bottom: 2em;
   float: right;
   border-radius: 50em;
   border: 0.47375em solid #000040;
 }
-/* line 142, sass/_index.scss */
+/* line 171, sass/_index.scss */
 .propos div a {
   display: inline-block;
   margin-top: 6em;
-  width: 18.181818%;
+  width: 27.27272727272727%;
   text-align: center;
   text-decoration: none;
-  color: #000040;
+  color: white;
+  background-color: #000040;
   border: 0.2em solid #000040;
   padding: 0.5em;
   border-radius: 0.6em;
 }
-/* line 153, sass/_index.scss */
+/* line 183, sass/_index.scss */
 .propos div a:hover {
-  background-color: #000040;
-  color: white;
+  background-color: white;
+  color: #000040;
   text-decoration: underline;
 }
-/* line 161, sass/_index.scss */
+/* line 191, sass/_index.scss */
 .propos:after {
   content: "";
   clear: both;
   display: block;
 }
 
-/* line 168, sass/_index.scss */
-.realisations, .services, .contact {
+/* line 198, sass/_index.scss */
+.realisations, .skills, .contact {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
+  float: none;
   background-color: #007f73;
   color: white;
   clear: both;
 }
-/* line 175, sass/_index.scss */
-.realisations div, .services div, .contact div {
+/* line 206, sass/_index.scss */
+.realisations div, .skills div, .contact div {
   width: 72.97297%;
   float: left;
   margin-right: 1.35135%;
@@ -732,38 +766,45 @@ header div .social a:hover {
   text-align: center;
   padding: 1em 0 2em;
 }
-/* line 182, sass/_index.scss */
-.realisations div ul, .services div ul, .contact div ul {
+/* line 213, sass/_index.scss */
+.realisations div ul, .skills div ul, .contact div ul {
   padding: 0;
   margin: 0;
 }
-/* line 188, sass/_index.scss */
-.realisations div li, .services div li, .contact div li {
-  width: 27.27%;
-  height: 27.27%;
-  position: relative;
-  display: inline-block;
+/* line 217, sass/_index.scss */
+.realisations div ul:after, .skills div ul:after, .contact div ul:after {
+  content: "";
+  clear: both;
+  display: block;
 }
-/* line 194, sass/_index.scss */
-.realisations div li a, .services div li a, .contact div li a {
+/* line 224, sass/_index.scss */
+.realisations div li, .skills div li, .contact div li {
+  box-sizing: border-box;
+  width: 27.27%;
+  float: left;
+  list-style-type: none;
+}
+/* line 231, sass/_index.scss */
+.realisations div li a, .skills div li a, .contact div li a {
   display: inline-block;
   width: 100%;
   position: relative;
-  border-radius: 50em;
 }
-/* line 201, sass/_index.scss */
-.realisations div li + li, .services div li + li, .contact div li + li {
+/* line 237, sass/_index.scss */
+.realisations div li + li, .skills div li + li, .contact div li + li {
   margin-left: 8.74%;
 }
-/* line 205, sass/_index.scss */
-.realisations div li img, .services div li img, .contact div li img {
+/* line 241, sass/_index.scss */
+.realisations div li img, .skills div li img, .contact div li img {
   border-radius: 50em;
   border: 0.47375em solid;
   border-color: #00604a;
-  width: 96%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
-/* line 212, sass/_index.scss */
-.realisations div li a span, .services div li a span, .contact div li a span {
+/* line 250, sass/_index.scss */
+.realisations div li a span, .skills div li a span, .contact div li a span {
   position: absolute;
   padding: 40% 0;
   font-weight: bold;
@@ -777,85 +818,89 @@ header div .social a:hover {
   opacity: 0.9;
   border-radius: 50em;
 }
-/* line 227, sass/_index.scss */
-.realisations div li:hover a span, .services div li:hover a span, .contact div li:hover a span, .realisations div li a span:hover, .services div li a span:hover, .contact div li a span:hover {
+/* line 265, sass/_index.scss */
+.realisations div li:hover a span, .skills div li:hover a span, .contact div li:hover a span, .realisations div li a span:hover, .skills div li a span:hover, .contact div li a span:hover {
   transition: 0.7s;
   opacity: 0;
 }
-/* line 233, sass/_index.scss */
-.realisations div > a, .services div > a, .contact div > a {
+/* line 271, sass/_index.scss */
+.realisations div > a, .skills div > a, .contact div > a {
   clear: both;
   display: inline-block;
   text-align: center;
   float: none;
   text-decoration: none;
   margin: 2em auto;
-  color: white;
+  color: #00604a;
+  background-color: white;
   border: 0.2em solid white;
   padding: 0.5em;
   border-radius: 0.6em;
 }
-/* line 245, sass/_index.scss */
-.realisations div > a:hover, .services div > a:hover, .contact div > a:hover {
-  background-color: white;
-  color: #00604a;
-  text-decoration: underline;
-}
-
-/* line 255, sass/_index.scss */
-.services {
-  color: #000040;
-  background-color: white;
-}
-/* line 261, sass/_index.scss */
-.services div li img {
-  border-color: #000040;
-}
-/* line 265, sass/_index.scss */
-.services div li img:hover + span, .services div li span:hover {
-  color: #000040;
-}
-/* line 273, sass/_index.scss */
-.services div > a {
-  color: #000040;
-  border: 0.2em solid #000040;
-}
-/* line 277, sass/_index.scss */
-.services div > a:hover {
-  background-color: #000040;
+/* line 284, sass/_index.scss */
+.realisations div > a:hover, .skills div > a:hover, .contact div > a:hover {
+  background-color: #00604a;
   color: white;
   text-decoration: underline;
 }
 
-/* line 287, sass/_index.scss */
+/* line 294, sass/_index.scss */
+.skills {
+  color: #000040;
+  background-color: white;
+  float: none;
+}
+/* line 301, sass/_index.scss */
+.skills div li img {
+  border-color: #000040;
+}
+/* line 305, sass/_index.scss */
+.skills div li img:hover + span, .skills div li span:hover {
+  color: #000040;
+}
+/* line 313, sass/_index.scss */
+.skills div > a {
+  color: white;
+  background-color: #000040;
+  border: 0.2em solid #000040;
+}
+/* line 318, sass/_index.scss */
+.skills div > a:hover {
+  background-color: white;
+  color: #000040;
+  text-decoration: underline;
+}
+
+/* line 328, sass/_index.scss */
 .contact {
   color: white;
   background-color: #007f73;
+  float: none;
 }
-/* line 292, sass/_index.scss */
+/* line 334, sass/_index.scss */
 .contact div li {
   width: 13.333%;
   height: 13.333%;
   position: relative;
 }
-/* line 297, sass/_index.scss */
+/* line 339, sass/_index.scss */
 .contact div li a {
   width: 100%;
 }
-/* line 301, sass/_index.scss */
+/* line 343, sass/_index.scss */
 .contact div li + li {
   margin-left: 3.65%;
 }
-/* line 305, sass/_index.scss */
+/* line 347, sass/_index.scss */
 .contact div li img {
   border: none;
   width: 100%;
 }
-/* line 310, sass/_index.scss */
+/* line 352, sass/_index.scss */
 .contact div li a span {
   font-size: 200%;
 }
-/* line 318, sass/_index.scss */
+/* line 360, sass/_index.scss */
 .contact div > a {
   clear: both;
   display: inline-block;
@@ -863,34 +908,37 @@ header div .social a:hover {
   float: none;
   text-decoration: none;
   margin: 2em auto;
-  color: white;
+  color: #00604a;
+  background-color: white;
   border: 0.2em solid white;
   padding: 0.5em;
   border-radius: 0.6em;
 }
-/* line 330, sass/_index.scss */
+/* line 373, sass/_index.scss */
 .contact div > a:hover {
-  background-color: white;
-  color: #00604a;
+  background-color: #00604a;
+  color: white;
   text-decoration: underline;
 }
 
-/* line 340, sass/_index.scss */
+/* line 383, sass/_index.scss */
 footer {
-  clear: both;
+  position: absolute;
   width: 100%;
+  height: 6em;
   bottom: 0;
   background-color: #004f7e;
   color: white;
   text-align: center;
   font-size: 1.2em;
   padding: 1em 0;
+  box-sizing: border-box;
 }
-/* line 350, sass/_index.scss */
+/* line 395, sass/_index.scss */
 footer a {
   color: white;
 }
-/* line 354, sass/_index.scss */
+/* line 399, sass/_index.scss */
 footer span {
   display: block;
 }
@@ -905,9 +953,8 @@ footer span {
   margin-left: 0;
   margin-right: 0;
   float: none;
-  padding-top: 4.345em;
 }
-/* line 9, sass/_a-propos.scss */
+/* line 8, sass/_a-propos.scss */
 .a_propos div {
   width: 72.97297%;
   float: left;
@@ -915,40 +962,41 @@ footer span {
   float: none;
   margin: 0 auto 2em;
 }
-/* line 14, sass/_a-propos.scss */
+/* line 13, sass/_a-propos.scss */
 .a_propos div:after {
   content: "";
   clear: both;
   display: block;
 }
-/* line 20, sass/_a-propos.scss */
+/* line 19, sass/_a-propos.scss */
 .a_propos div img {
   width: 30%;
   float: right;
   border-radius: 50em;
   border: 0.47375em solid #000040;
 }
-/* line 27, sass/_a-propos.scss */
+/* line 26, sass/_a-propos.scss */
 .a_propos div p {
   width: 60%;
   font-size: 1.2em;
 }
-/* line 32, sass/_a-propos.scss */
+/* line 31, sass/_a-propos.scss */
 .a_propos div a {
   display: inline-block;
-  margin-top: 6em;
+  margin-top: 3em;
   width: 18.181818%;
   text-align: center;
   text-decoration: none;
-  color: #000040;
+  color: white;
+  background-color: #000040;
   border: 0.2em solid #000040;
   padding: 0.5em;
   border-radius: 0.6em;
 }
 /* line 43, sass/_a-propos.scss */
 .a_propos div a:hover {
-  background-color: #000040;
-  color: white;
+  background-color: white;
+  color: #000040;
   text-decoration: underline;
 }
 
@@ -962,9 +1010,8 @@ footer span {
   margin-left: 0;
   margin-right: 0;
   float: none;
-  padding-top: 4.345em;
 }
-/* line 9, sass/_contact.scss */
+/* line 8, sass/_contact.scss */
 .contact1 div {
   width: 72.97297%;
   float: left;
@@ -972,53 +1019,54 @@ footer span {
   float: none;
   margin: 0 auto 2em;
 }
-/* line 14, sass/_contact.scss */
+/* line 13, sass/_contact.scss */
 .contact1 div:after {
   content: "";
   clear: both;
   display: block;
 }
-/* line 20, sass/_contact.scss */
+/* line 19, sass/_contact.scss */
 .contact1 div div {
   width: 45%;
   float: left;
 }
-/* line 25, sass/_contact.scss */
+/* line 24, sass/_contact.scss */
 .contact1 div div + div {
   margin-left: 10%;
 }
-/* line 31, sass/_contact.scss */
+/* line 30, sass/_contact.scss */
 .contact1 h3 {
   font-size: 1.3em;
 }
-/* line 37, sass/_contact.scss */
+/* line 36, sass/_contact.scss */
 .contact1 form div {
   width: 100%;
 }
-/* line 41, sass/_contact.scss */
+/* line 40, sass/_contact.scss */
 .contact1 form label {
   display: block;
   font-size: 1.2em;
   margin-bottom: 0.3em;
 }
-/* line 47, sass/_contact.scss */
+/* line 46, sass/_contact.scss */
 .contact1 form input, .contact1 form textarea {
   display: block;
   width: 100%;
+  box-sizing: border-box;
   margin-bottom: 1em;
 }
 /* line 53, sass/_contact.scss */
 .contact1 form input[type="submit"] {
   margin-top: 2em;
-  background-color: white;
-  color: #004f7e;
+  background-color: #000040;
+  color: white;
   font-size: 1.4em;
-  border: 2px solid #004f7e;
+  border: 2px solid #000040;
 }
 /* line 60, sass/_contact.scss */
 .contact1 form input[type="submit"]:hover {
-  background-color: #004f7e;
-  color: white;
+  background-color: white;
+  color: #000040;
 }
 /* line 67, sass/_contact.scss */
 .contact1 .coordonnees {
@@ -1048,9 +1096,12 @@ footer span {
   margin-left: 0;
   margin-right: 0;
   float: none;
-  padding-top: 4.345em;
 }
-/* line 9, sass/_realisations.scss */
+/* line 8, sass/_realisations.scss */
+.real h2 {
+  text-align: center;
+}
+/* line 12, sass/_realisations.scss */
 .real div {
   width: 72.97297%;
   float: left;
@@ -1058,69 +1109,101 @@ footer span {
   float: none;
   margin: 0 auto 2em;
 }
-/* line 14, sass/_realisations.scss */
+/* line 17, sass/_realisations.scss */
 .real div:after {
   content: "";
   clear: both;
   display: block;
 }
-/* line 20, sass/_realisations.scss */
+/* line 23, sass/_realisations.scss */
 .real div ul {
   padding: 0;
   margin: 0;
   width: 100%;
   position: relative;
 }
-/* line 27, sass/_realisations.scss */
+/* line 30, sass/_realisations.scss */
 .real div li {
   list-style-type: none;
   width: 100%;
   position: relative;
-  margin: 1em 0;
+  margin: 2em 0;
 }
-/* line 33, sass/_realisations.scss */
+/* line 36, sass/_realisations.scss */
+.real div li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* line 42, sass/_realisations.scss */
 .real div li a.img {
   display: inline-block;
+  box-sizing: border-box;
   width: 25%;
   position: relative;
   border-radius: 50em;
-  left: -52.8%;
+  left: -65%;
   text-align: center;
   transition: all 1s ease-in;
 }
-/* line 43, sass/_realisations.scss */
-.real div li a.link {
+/* line 53, sass/_realisations.scss */
+.real div li div.links {
+  width: 15%;
   display: inline-block;
+  margin-bottom: 0;
   vertical-align: middle;
-  width: 10%;
+}
+/* line 61, sass/_realisations.scss */
+.real div li a.link {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em;
+  display: block;
   text-align: center;
   opacity: 0;
-  margin-left: 1%;
   text-decoration: none;
-  color: #000040;
+  background-color: #000040;
+  color: white;
   border: 0.2em solid #000040;
-  padding: 0.5%;
   border-radius: 0.6em;
+  transition: 1s;
 }
-/* line 56, sass/_realisations.scss */
+/* line 75, sass/_realisations.scss */
+.real div li a.link:hover {
+  background-color: white;
+  color: #000040;
+}
+/* line 80, sass/_realisations.scss */
 .real div li a.link span {
   display: none;
 }
-/* line 62, sass/_realisations.scss */
-.real div li p {
+/* line 84, sass/_realisations.scss */
+.real div li a.link + a.link {
+  margin-top: 1em;
+}
+/* line 90, sass/_realisations.scss */
+.real div li div.desc {
   opacity: 0;
-  width: 30%;
+  width: 40%;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10%;
+  transition: 1s;
 }
-/* line 69, sass/_realisations.scss */
+/* line 99, sass/_realisations.scss */
+.real div li .desc h2 {
+  font-size: 1.2em;
+}
+/* line 103, sass/_realisations.scss */
 .real div li img {
   border-radius: 50em;
   border: 0.47375em solid;
   border-color: #000040;
-  width: 96%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
-/* line 76, sass/_realisations.scss */
+/* line 112, sass/_realisations.scss */
 .real div li a.img span {
   position: absolute;
   padding: 40% 0;
@@ -1135,28 +1218,26 @@ footer span {
   opacity: 0.9;
   border-radius: 50em;
 }
-/* line 91, sass/_realisations.scss */
+/* line 127, sass/_realisations.scss */
 .real div li:hover a.img {
   left: 10%;
 }
-/* line 95, sass/_realisations.scss */
-.real div li:hover p {
-  transition: 1s;
+/* line 131, sass/_realisations.scss */
+.real div li:hover .desc {
   opacity: 1;
 }
-/* line 100, sass/_realisations.scss */
+/* line 135, sass/_realisations.scss */
 .real div li:hover a.link {
-  transition: 1s;
   opacity: 1;
 }
-/* line 105, sass/_realisations.scss */
+/* line 140, sass/_realisations.scss */
 .real div li:hover a.img span, .real div li a.img span:hover {
   transition: 0.7s;
   opacity: 0;
 }
 
-/* line 1, sass/_services.scss */
-.serv {
+/* line 150, sass/_realisations.scss */
+.single-real {
   clear: both;
   background-color: white;
   color: #000040;
@@ -1165,70 +1246,187 @@ footer span {
   margin-left: 0;
   margin-right: 0;
   float: none;
-  padding-top: 4.345em;
 }
-/* line 9, sass/_services.scss */
-.serv div {
+/* line 157, sass/_realisations.scss */
+.single-real div {
   width: 72.97297%;
   float: left;
   margin-right: 1.35135%;
   float: none;
   margin: 0 auto 2em;
 }
-/* line 14, sass/_services.scss */
-.serv div:after {
+/* line 162, sass/_realisations.scss */
+.single-real div:after {
   content: "";
   clear: both;
   display: block;
 }
-/* line 20, sass/_services.scss */
-.serv div ul {
+/* line 169, sass/_realisations.scss */
+.single-real p {
+  width: 54.545454%;
+}
+/* line 173, sass/_realisations.scss */
+.single-real img {
+  width: 27.27272727272727%;
+  height: 27.27272727272727%;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  float: right;
+  border-radius: 50em;
+  border: 0.47375em solid #000040;
+}
+/* line 184, sass/_realisations.scss */
+.single-real a {
+  display: inline-block;
+  margin-top: 6em;
+  width: 27.27272727272727%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #000040;
+  border: 0.2em solid #000040;
+  padding: 0.5em;
+  border-radius: 0.6em;
+}
+/* line 196, sass/_realisations.scss */
+.single-real a span {
+  display: none;
+}
+/* line 200, sass/_realisations.scss */
+.single-real a:hover {
+  background-color: white;
+  color: #000040;
+  text-decoration: underline;
+}
+
+/* line 1, sass/_skills.scss */
+.comp {
+  clear: both;
+  background-color: white;
+  color: #000040;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+}
+/* line 8, sass/_skills.scss */
+.comp h2 {
+  text-align: center;
+}
+/* line 12, sass/_skills.scss */
+.comp div {
+  width: 72.97297%;
+  float: left;
+  margin-right: 1.35135%;
+  float: none;
+  margin: 0 auto 2em;
+}
+/* line 17, sass/_skills.scss */
+.comp div:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* line 23, sass/_skills.scss */
+.comp div ul {
   padding: 0;
   margin: 0;
   width: 100%;
   position: relative;
-}
-/* line 27, sass/_services.scss */
-.serv div li {
-  list-style-type: none;
-  width: 100%;
-  position: relative;
-  margin: 1em 0;
-}
-/* line 33, sass/_services.scss */
-.serv div li img {
-  display: inline-block;
-  width: 25%;
-  position: relative;
-  border-radius: 50em;
-  left: -30%;
+  font-size: 0;
   text-align: center;
-  transition: all 1s ease-in;
 }
-/* line 44, sass/_services.scss */
-.serv div li p {
-  opacity: 0;
-  width: 30%;
+/* line 32, sass/_skills.scss */
+.comp div li {
+  list-style-type: none;
+  box-sizing: border-box;
+  width: 18.18181818181818%;
+  margin: 1em 0.909090909090909%;
   display: inline-block;
-  vertical-align: middle;
+  font-size: 16px;
 }
-/* line 51, sass/_services.scss */
-.serv div li img {
+/* line 40, sass/_skills.scss */
+.comp div li img {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.47375em solid #000040;
   border-radius: 50em;
-  border: 0.47375em solid;
-  border-color: #000040;
-  width: 25%;
-}
-/* line 58, sass/_services.scss */
-.serv div li:hover img {
-  left: 20%;
-}
-/* line 62, sass/_services.scss */
-.serv div li:hover p {
-  transition: 1s;
-  opacity: 1;
 }
 
+@media screen and (max-width: 1599px) {
+  /* line 3, sass/_queries.scss */
+  .head div h1 {
+    margin-right: 2em;
+  }
+  /* line 7, sass/_queries.scss */
+  .head div a {
+    font-size: 100%;
+  }
+  /* line 11, sass/_queries.scss */
+  .head nav a {
+    padding: 0.79em 0.4em;
+  }
+
+  /* line 17, sass/_queries.scss */
+  .real div li a.img span {
+    font-size: 175%;
+  }
+
+  /* line 21, sass/_queries.scss */
+  .skills div li img {
+    border: 0.35em solid #000040;
+  }
+
+  /* line 25, sass/_queries.scss */
+  .contact div li img {
+    border: none;
+  }
+
+  /* line 29, sass/_queries.scss */
+  .contact div li a span {
+    font-size: 150%;
+  }
+}
+@media screen and (max-width: 1299px) {
+  /* line 37, sass/_queries.scss */
+  .head div h1 {
+    display: block;
+  }
+
+  /* line 42, sass/_queries.scss */
+  .wrapper {
+    padding-top: 8em;
+    padding-bottom: 6em;
+  }
+
+  /* line 50, sass/_queries.scss */
+  .propos div a {
+    margin-top: 3em;
+  }
+
+  /* line 57, sass/_queries.scss */
+  .realisations div li a span, .skills div li a span, .contact div li a span {
+    font-size: 150%;
+  }
+
+  /* line 61, sass/_queries.scss */
+  .contact div li img {
+    border: none;
+  }
+
+  /* line 65, sass/_queries.scss */
+  .contact div li a span {
+    font-size: 110%;
+  }
+}
+@media screen and (max-width: 959px) {
+  /* line 73, sass/_queries.scss */
+  .head div h1 {
+    display: inline-block;
+  }
+}
 @font-face {
   font-family: "icomoon";
   src: url("./fonts/icomoon.eot?#iefix") format("eot"), url("./fonts/icomoon.ttf") format("truetype"), url("./fonts/icomoon.woff") format("woff");
@@ -1239,7 +1437,7 @@ footer span {
 /*
  * Image replacement
  */
-/* line 152, sass/style.scss */
+/* line 153, sass/style.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -1248,7 +1446,7 @@ footer span {
   *text-indent: -9999px;
 }
 
-/* line 160, sass/style.scss */
+/* line 161, sass/style.scss */
 .ir:before {
   content: "";
   display: block;
@@ -1259,7 +1457,7 @@ footer span {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 171, sass/style.scss */
+/* line 172, sass/style.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -1268,7 +1466,7 @@ footer span {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 180, sass/style.scss */
+/* line 181, sass/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1284,7 +1482,7 @@ footer span {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 196, sass/style.scss */
+/* line 197, sass/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1298,7 +1496,7 @@ footer span {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 210, sass/style.scss */
+/* line 211, sass/style.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1314,7 +1512,7 @@ footer span {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 226, sass/style.scss */
+/* line 227, sass/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -1323,7 +1521,7 @@ footer span {
   /* 2 */
 }
 
-/* line 232, sass/style.scss */
+/* line 233, sass/style.scss */
 .clearfix:after {
   clear: both;
 }
@@ -1332,7 +1530,7 @@ footer span {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 241, sass/style.scss */
+/* line 242, sass/style.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -1353,7 +1551,7 @@ footer span {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 268, sass/style.scss */
+  /* line 269, sass/style.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -1362,18 +1560,18 @@ footer span {
     text-shadow: none !important;
   }
 
-  /* line 275, sass/style.scss */
+  /* line 276, sass/style.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 280, sass/style.scss */
+  /* line 281, sass/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 284, sass/style.scss */
+  /* line 285, sass/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1381,33 +1579,33 @@ footer span {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 292, sass/style.scss */
+  /* line 293, sass/style.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 298, sass/style.scss */
+  /* line 299, sass/style.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 304, sass/style.scss */
+  /* line 305, sass/style.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 308, sass/style.scss */
+  /* line 309, sass/style.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 313, sass/style.scss */
+  /* line 314, sass/style.scss */
   img {
     max-width: 100% !important;
   }
@@ -1415,7 +1613,7 @@ footer span {
   @page {
     margin: 0.5cm;
   }
-  /* line 321, sass/style.scss */
+  /* line 322, sass/style.scss */
   p,
   h2,
   h3 {
@@ -1423,7 +1621,7 @@ footer span {
     widows: 3;
   }
 
-  /* line 328, sass/style.scss */
+  /* line 329, sass/style.scss */
   h2,
   h3 {
     page-break-after: avoid;

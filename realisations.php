@@ -31,18 +31,24 @@ Template Name: Réalisations
             
             <?php $realisations = get_posts(array(
                     'post_type'     => 'realisations',
-                    'posts_per_page'    => 3,
+                    'posts_per_page'    => -1,
                   )); ?>
             <ul>
                 <?php if ($realisations): ?>
                     <?php foreach ($realisations as $post): ?>   
                         <li>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur voluptate rerum, atque delectus quos! Libero nemo impedit eos architecto nisi et molestias eligendi recusandae adipisci aliquam temporibus fugit consequuntur, ea.</p>
-                            <a class="link" href="<?php the_field('lien'); ?>" title="en savoir plus sur <?php the_field('nom') ?>">en savoir plus<span> sur <?php the_field('nom') ?></span></a>
-                            <a class="link" href="<?php the_field('lien'); ?>" title="aller sur le site <?php the_field('nom') ?>">aller sur le site<span> <?php the_field('nom') ?></span></a>
-                            <a class="img" href="<?php the_field('lien'); ?>" title="en savoir plus sur <?php the_field('nom') ?>">
-                                <img itemprop="image" src="<?php the_field('image'); ?>" alt="en apprendre plus sur <?php the_field('nom') ?>">
+                            <div class="desc">
+                                <h3><?php the_field('nom') ?></h3>
+                                <?php the_field('short_description') ?>
+                            </div><!--
+                            --><div class="links">
+                                <a class="link" href="<?php the_permalink(); ?>" title="en savoir plus sur <?php the_field('nom') ?>">en savoir plus<span> sur <?php the_field('nom') ?></span></a>
+                                <?php if ( get_field('lien') != "" ): ?>
+                                    <a class="link" href="<?php the_field('lien'); ?>" title="aller sur le site <?php the_field('nom') ?>">aller sur le site<span> <?php the_field('nom') ?></span></a>
+                                <?php endif; ?>
+                            </div><!--
+                            --><a class="img" href="<?php the_field('lien'); ?>" title="en savoir plus sur <?php the_field('nom') ?>">
+                                <?php echo get_the_post_thumbnail( $post_id, 900, 'thumbnail' ); ?> 
                                 <span itemprop="name"><?php the_field('nom') ?></span>
                             </a>
 

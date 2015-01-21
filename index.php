@@ -18,7 +18,7 @@
         <section class="realisations">
             <div itemscope itemtype="http://schema.org/WebSite">
                 
-                <h2>J'ai réalisé...</h2>
+                <h2>J'ai réalisé dernièrement...</h2>
                 
                 <?php $realisations = get_posts(array(
                         'post_type'     => 'realisations',
@@ -27,28 +27,30 @@
                 <ul>
                     <?php if ($realisations): ?>
                         <?php foreach ($realisations as $post): ?>   
-                           <li><a href="<?php the_field('lien'); ?>" title="en savoir plus sur <?php the_field('nom') ?>"><img itemprop="image" src="<?php the_field('image'); ?>" alt="en apprendre plus sur <?php the_field('nom') ?>"><span itemprop="name"><?php the_field('nom') ?></span></a></li> 
+                           <li><a href="<?php the_permalink(); ?>" title="en savoir plus sur <?php the_field('nom') ?>"><?php echo get_the_post_thumbnail( $post_id, 900, 'thumbnail' ); ?><span itemprop="name"><?php the_field('nom') ?></span></a></li> 
                         <?php endforeach; ?>
                     <?php endif; ?>  
                 </ul>
-                <a href="realisations.html" title="aller sur la page Réalisations">découvrir toutes mes réalisations</a>
+                <a href="realisations" title="aller sur la page Réalisations">découvrir toutes mes réalisations</a>
             </div>
         </section>
-        <section class="services" itemscope itemtype="http://schema.org/Language" >
+        <section class="skills" itemscope itemtype="http://schema.org/Language" >
             <div>
-                <h2>Ce que je peux faire pour vous</h2>
-                <?php $services = get_posts(array(
-                    'post_type'     => 'services',
+                <h2>Je sais désormais utiliser...</h2>
+                <?php $skills = get_posts(array(
+                    'post_type'     => 'skills',
                     'posts_per_page'    => 3,
                   )); ?>
                 <ul>
-                    <?php if ($services): ?>
-                        <?php foreach ($services as $post): ?>   
-                           <li><img itemprop="image" src="<?php the_field('image'); ?>" alt="<?php the_field('nom') ?>"></li> 
+                    <?php if ($skills): ?>
+                        <?php foreach ($skills as $post): ?>   
+                            <li>
+                                <?php echo get_the_post_thumbnail( $post_id, 900, 'thumbnail' ); ?> 
+                            </li> 
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </ul>
-            <a href="services.html" title="aller sur la page Services">en savoir plus sur mes services</a>
+            <a href="skills" title="aller sur la page Compétences">en savoir plus sur mes compétences</a>
             </div>
         </section>
         <section class="contact">
@@ -62,11 +64,11 @@
                 <ul class="social">
                     <?php if ($reseaux): ?>
                         <?php foreach ($reseaux as $post): ?>  
-                            <li><a href="<?php the_field('lien'); ?>" title="Me contacter via <?php the_field('nom') ?>" ><img src="<?php the_field('image'); ?>" alt="Me contacter via <?php the_field('nom'); ?>" ><span><?php the_field('nom'); ?></span></a></li>
+                            <li><a href="<?php the_field('lien'); ?>" title="Me contacter via <?php the_field('nom') ?>" ><?php echo get_the_post_thumbnail( $post_id, 300, 'thumbnail' ); ?><span><?php the_field('nom'); ?></span></a></li>
                         <?php endforeach; ?>
                     <?php endif; ?>  
                 </ul>
-                <a href="contact.html" title="aller sur la page Contact">voir mes coordonnées</a>
+                <a href="contact" title="aller sur la page Contact">voir mes coordonnées</a>
             </div>
             
             

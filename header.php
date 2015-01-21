@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js" lang="fr">
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,6 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-        <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,7 +22,7 @@
 
         <!-- Add your site or application content here -->
         
-        <header>
+        <header class="head">
             <div>
                 <h1><a href="http://wordpress/">Julien Laurent</a></h1>
                 <?php 
@@ -31,7 +30,7 @@
                     $defaults = array(
                         'theme_location'  => 'top',
                         'container'       => 'nav',
-                        'container_class' => '',
+                        'container_class' => 'nav',
                         'container_id'    => '',
                         'menu_class'      => 'menu',
                         'menu_id'         => '',
@@ -49,7 +48,7 @@
                     'post_type'     => 'reseaux',
                     'posts_per_page'    => 6,
                   )); ?>
-                
+
                 <ul class="social">
                     <?php if ($reseaux): ?>
                         <?php foreach ($reseaux as $post): ?>  
@@ -61,3 +60,4 @@
                 </ul>
             </div>
         </header>
+        <div class="wrapper">

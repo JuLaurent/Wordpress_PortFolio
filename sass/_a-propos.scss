@@ -4,7 +4,6 @@
     color:$deepBlue;
     @include span(15);
     float:none;
-    padding-top:4.345em;
 
     div {
         @include span(11);
@@ -31,18 +30,19 @@
 
         a {
             display:inline-block;
-            margin-top:6em;
+            margin-top:3em;
             width:18.181818%;
             text-align: center;
             text-decoration: none;
-            color:$deepBlue;
+            color:white;
+            background-color: $deepBlue;
             border:0.2em solid $deepBlue;
             padding:0.5em;
             border-radius: 0.6em;
 
             &:hover{
-                background-color: $deepBlue;
-                color:white;
+                background-color: white;
+                color:$deepBlue;
                 text-decoration: underline;
             }
         }
