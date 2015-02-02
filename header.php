@@ -24,7 +24,7 @@
         
         <header class="head">
             <div>
-                <h1><a href="http://wordpress/">Julien Laurent</a></h1>
+                <h1><a href="http://www.Julien-Laurent.com/">Julien Laurent</a></h1>
                 <?php 
 
                     $defaults = array(
