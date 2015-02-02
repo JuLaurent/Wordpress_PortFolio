@@ -34,9 +34,9 @@ Template Name: Contact
                             <label for="from">votre adresse mail</label>
                             <input type="text" id="from" name="from"> <br>
                             <label for="subject">à propos de</label>
-                            <input type="text" id="subject" name="subject"> <br>
+                            <input type="text" id="subject" name="subject"><br>
                             <label for="message">votre message</label>
-                            <textarea name="message" id="message" cols="30" rows="10">Ecrivez votre message ici</textarea>
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
                             <input type="submit" value="envoyer le mail">
                         </div>
                     </form>
@@ -64,8 +64,8 @@ Template Name: Contact
      $to      = 'Julienl.sama@gmail.com';
      $subject = $_POST['subject'];
      $message = $_POST['message'];
-     $headers = 'From: webmaster@example.com' . "\r\n" .
-     'Reply-To: webmaster@example.com' . "\r\n" .
+     $headers = 'From:'. $_POST['from'] . "\r\n" .
+     'Reply-To:' . $_POST['from'] . "\r\n" .
      'X-Mailer: PHP/' . phpversion();
 
      mail($to, $subject, $message, $headers);

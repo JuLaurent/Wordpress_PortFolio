@@ -1,0 +1,402 @@
+@mixin color($color, $background-color){
+    @extend .realisations;
+    color: $color;
+    background-color: $background-color;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    font-family: 'Lato', Helvetica, sans-serif;
+    min-height: 100%;
+    position: relative;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom:1.2em;
+}
+
+.head {
+    background-color: $blue;
+    color:white;
+    @include span(15);
+    position:fixed;
+    z-index:99;
+    
+    div {
+        
+        @include span(11);
+        margin:0 auto;
+        float:none;
+
+        
+        h1 {
+            text-transform: uppercase;
+            margin:0 3em 0 0;
+            vertical-align: middle;
+        }
+
+        h1, .nav, ul, li {
+            display :inline-block;
+        }
+
+        ul {
+            vertical-align: middle;
+            margin:0;
+            padding: 0;
+        }
+        
+        a {
+            color:white;
+            text-decoration: none;
+            display:inline-block;
+            font-size: 120%;
+        }
+
+        .nav a {
+            padding:0.79em 0.4em;
+
+            &:hover{
+                background-color: $green;
+                text-decoration: underline;
+            }
+            
+        }
+
+        .current_page_item {
+             background-color: $green;
+        }
+
+        .social{      
+
+            margin:0;
+            float:right;
+
+            li {
+                vertical-align: middle;
+            }
+            
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: "icomoon";
+            }
+
+            .icon-facebook::before {
+                    content: "\e601";
+            }
+
+            .icon-twitter::before {
+                    content: "\e602";
+            }
+
+            .icon-googleplus::before{
+                    content: "\e600";
+            }
+
+            .icon-linkedin::before {
+                    content: "\e604";
+            }
+
+            .icon-feed::before {
+                    content: "\e603";
+            }
+
+            a{
+            
+            text-align:right;
+            padding:0.79em 0.4em ;
+
+                &:hover{
+                background-color: $green;
+                text-decoration: underline;
+                }
+
+            }   
+        }
+     
+
+    }   
+        
+}
+
+.wrapper {
+    padding-top:4.375em;
+    padding-bottom:6em;
+    position: relative;
+
+}
+
+.propos {
+    clear:both;
+    background-color: white;
+    color:$deepBlue;
+    @include span(15);
+    float:none;
+    padding-bottom:2em;
+
+    div {
+        @include span(11);
+        float:none;
+        margin:0 auto;
+        padding:1em 0;
+
+        &:after{
+            clear:both;
+            content:"";
+            display:block;
+        }
+
+        blockquote {
+            margin:0;
+            font-family: 'Droid Serif', serif;
+            width:54.545454%;
+            font-size:1.5em;
+            font-style: italic;
+            float:none;
+
+        }
+
+        img {
+            width:27.27272727272727%;
+            box-sizing: border-box;
+            margin-bottom:2em;
+            float:right;
+            border-radius: 50em;
+            border:0.47375em solid $deepBlue;
+
+        }
+        
+        a {
+            display:inline-block;
+            margin-top:6em;
+            width:27.27272727272727%;
+            text-align: center;
+            text-decoration: none;
+            color:white;
+            background-color: $deepBlue;
+            border:0.2em solid $deepBlue;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color: white;
+                color:$deepBlue;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &:after {
+        content :"";
+        clear:both;
+        display:block;
+    }
+}
+
+.realisations {
+    @include span(15);
+    float:none;
+    background-color: $green;
+    color:white;
+    clear:both;
+   
+
+    div {
+        @include span(11);
+        margin:0 auto;
+        float:none;
+        text-align: center;
+        padding:1em 0 2em;
+
+        ul {
+            padding:0;
+            margin:0;
+            
+            &:after {
+                content :"";
+                clear:both;
+                display:block;
+            }
+        }
+
+        li {
+            box-sizing: border-box;
+            width:27.27%;
+            float:left;
+            list-style-type: none;
+            
+            
+            a {
+                display:inline-block;
+                width:100%;
+                position:relative;
+            }
+
+            &+li {
+                margin-left: 8.74%;
+            }
+            
+            img{
+                border-radius: 50em;
+                border:0.47375em solid; 
+                border-color:$deepGreen;
+                width:100%;
+                height:100%;
+                box-sizing: border-box;
+            }
+
+            a span {
+                position:absolute;
+                padding:40% 0;
+                font-weight: bold;
+                width:100%;
+                height:20%;
+                color:white;
+                background-color: black;
+                right:0%;
+                top:0%;
+                font-size:250%;
+                opacity:0.9;
+                border-radius: 50em;
+            }
+
+            &:hover a span, a span:hover {
+               transition : 0.7s;
+               opacity: 0;
+            }            
+        }
+
+        >a {
+            clear:both;
+            display: inline-block;
+            text-align: center;
+            float:none;
+            text-decoration: none;
+            margin:2em auto;
+            color:$deepGreen;
+            background-color: white;
+            border:0.2em solid white;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color:$deepGreen;
+                color:white;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+.skills {
+    @include color($deepBlue, white);
+    float:none;
+
+    div {
+        li {
+            
+            img {
+                border-color: $deepBlue;
+            }   
+
+            img:hover + span, span:hover {
+
+               color:$deepBlue;
+
+            }
+        }
+        
+
+        >a {
+            color:white;
+            background-color: $deepBlue;
+            border:0.2em solid $deepBlue;
+
+            &:hover{
+                background-color: white;
+                color:$deepBlue;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+.contact {
+    @include color(white, $green);
+    float:none;
+
+    div {
+        
+        li {
+            width:13.333%;
+            height:13.333%;
+            position:relative;
+
+            a {
+                width:100%;
+            }
+
+            &+li {
+                margin-left:3.65%;
+            }
+            
+            img{  
+                border:none;
+                width:100%;
+            }
+
+            a span{
+                font-size:200%;
+            }
+
+        }
+
+        
+
+        >a {
+            clear:both;
+            display: inline-block;
+            text-align: center;
+            float:none;
+            text-decoration: none;
+            margin:2em auto;
+            color:$deepGreen;
+            background-color: white;
+            border:0.2em solid white;
+            padding:0.5em;
+            border-radius: 0.6em;
+
+            &:hover{
+                background-color:$deepGreen;
+                color:white;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+footer {
+    position: absolute;
+    width:100%;
+    height: 6em;
+    bottom:0;
+    background-color: $blue;
+    color:white;
+    text-align:center;
+    font-size:1.2em;
+    padding:1em 0;
+    box-sizing:border-box;
+
+    a{
+        color:white;
+    }
+
+    span {
+        display:block;
+    }
+}
